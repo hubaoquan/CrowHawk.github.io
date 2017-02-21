@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Java基础学习(3)"
-subtitle:   "泛型"
+title:      "Java基础学习(3)——泛型"
+subtitle:   ""
 date:       2017-02-21 12:00:00
 author:     "Crow"
 #header-img: "img/post-bg-nextgen-web-pwa.jpg"

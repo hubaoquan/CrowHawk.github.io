@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Java基础学习(3)"
-subtitle:   "动态代理"
+title:      "Java基础学习(4)——动态代理"
+subtitle:   ""
 date:       2017-02-21 12:00:00
 author:     "Crow"
 #header-img: "img/post-bg-nextgen-web-pwa.jpg"

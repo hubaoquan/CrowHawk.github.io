@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Java基础学习(2)"
-subtitle:   "注解(Annotation)"
+title:      "Java基础学习(2)——注解"
+subtitle:   ""
 date:       2017-02-13 12:00:00
 author:     "Crow"
 #header-img: "img/post-bg-nextgen-web-pwa.jpg"

@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Java基础学习(1)"
-subtitle:   "反射"
+title:      "Java基础学习(1)——反射"
+subtitle:   ""
 date:       2017-02-12 12:00:00
 author:     "Crow"
 #header-img: "img/post-bg-nextgen-web-pwa.jpg"
