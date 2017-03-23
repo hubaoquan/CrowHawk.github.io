@@ -17,7 +17,7 @@ tags:
 
 ---
 
-![pic](/Users/CrowHawk/Development/Crow-Blog/img/mybg.jpeg)
+![pic](/img/mybg.jpeg)
 
 ### 反射的基石-->Class类
 Java程序中的各个类属于同一事物，描述这类事务的Java类名就是**Class**。
