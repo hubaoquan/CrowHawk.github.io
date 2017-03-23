@@ -16,6 +16,7 @@ tags:
 Mapper接口开发方法**只需要程序员编写Mapper接口**（相当于Dao接口），由MyBatis框架根据接口定义创建接口的动态代理对象，代理对象的方法体同上边Dao接口实现类方法。
 Mapper接口开发需要遵循以下规范：
 1. Mapper.xml文件中的namespace与mapper接口的类路径相同
+
 ```xml
 <!--namespace命名空间，作用就是对sql进行分类化管理，理解sql隔离
 注意：使用mapper代理方法开发，namespace有着特殊重要的作用
@@ -25,11 +26,13 @@ Mapper接口开发需要遵循以下规范：
 2. Mapper接口方法名和Mapper.xml中定义的每个statement的id相同 
 3. Mapper接口方法的输入参数类型和mapper.xml中定义的每个sql 的parameterType的类型相同
 4. Mapper接口方法的输出参数类型和mapper.xml中定义的每个sql的resultType的类型相同
+
 ```xml
 <select id="findUserById" parameterType="int" resultType="com.crow.po.User">
         SELECT * FROM USER WHERE id = #{id}
 </select>
 ```
+
 ```java
 //根据id查询用户信息
 public User findUserById(int id) throws Exception;
