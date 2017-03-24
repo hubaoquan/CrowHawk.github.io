@@ -1,8 +1,8 @@
 ---
 layout:     post
-title:      "MyBatis学习笔记(8)——高级映射之一对多映射"
+title:      "MyBatis学习笔记(9)——高级映射之一对多映射"
 subtitle:   ""
-date:       2017-03-23 22:00:00
+date:       2017-03-24 14:00:00
 author:     "Crow"
 #header-img: "img/post-bg-nextgen-web-pwa.jpg"
 header-mask: 0.3
