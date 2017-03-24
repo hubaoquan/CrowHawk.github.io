@@ -93,6 +93,12 @@ resultMap的定义也可以继承，通过`extends`语句实现，从而避免�
 </select>
 ```
 
+### OrderCustomMapper.java
+
+```java
+public List<Orders> findOrderAndDetailResultMap();
+```
+
 ### 测试代码
 
 ```java

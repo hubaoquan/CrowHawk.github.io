@@ -237,6 +237,12 @@ SQL语句同resultType实现方案。
     </select>
 ```
 
+### OrderCustomMapper.java
+
+```java
+public List<Orders> findOrdersUserResultMap();
+```
+
 ### 测试代码
 
 ```java
