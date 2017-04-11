@@ -87,6 +87,7 @@ void updateItems(Integer id, ItemsCustom itemsCustom) throws Exception;
 方法：
 + 商品信息修改页面显示
 + 商品信息修改提交
+
 ```java
 //使用@Controller来标识它是一个控制器
 @Controller
