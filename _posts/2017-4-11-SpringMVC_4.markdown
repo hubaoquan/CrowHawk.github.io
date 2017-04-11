@@ -199,6 +199,7 @@ public class ItemsController {
 ### 返回String
 
 如果Controller方法返回String，可以有以下三种方法：
+
 **1、表示返回逻辑视图名。**
 真正视图(jsp路径)=前缀+逻辑视图名+后缀
 
@@ -238,6 +239,7 @@ return "forward:queryItems.action";
 ### 返回void
 
 在Controller方法形参上可以定义request和response，使用request或response指定响应结果：
+
 **1、使用request转向页面**，如下：
 ```java
 request.getRequestDispatcher("页面路径").forward(request, response);
@@ -253,3 +255,4 @@ response.setCharacterEncoding("utf-8");
 response.setContentType("application/json;charset=utf-8");
 response.getWriter().write("json串");
 ```
+
