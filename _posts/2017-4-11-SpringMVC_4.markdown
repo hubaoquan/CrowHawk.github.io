@@ -11,7 +11,6 @@ tags:
     - JavaWeb
     - SpringMVC
 ---
-
 在之前的文章中，已经针对商品订单管理案例，使用SSM框架完成了商品列表查询的功能，本文则介绍了另一个商品修改功能的开发，同时也是为后续文章所介绍的技术提供一个案例。
 
 # 需求
@@ -74,7 +73,6 @@ public interface ItemsMapper {
 接口功能：
 + 根据id查询商品信息
 + 修改商品信息
-
 ```java
 //根据id查询商品信息
 ItemsCustom findItemsById(Integer id) throws Exception;
@@ -88,7 +86,6 @@ void updateItems(Integer id, ItemsCustom itemsCustom) throws Exception;
 方法：
 + 商品信息修改页面显示
 + 商品信息修改提交
-
 ```java
 //使用@Controller来标识它是一个控制器
 @Controller
@@ -165,7 +162,6 @@ public class ItemsController {
 ### 作用于Controller中的方法
 
 `@RequestMapping`作用于方法时主要有两种功能：
-
 + **url映射**
 定义controller方法对应的url，进行处理器映射使用。
 + **限制http请求方法**
@@ -185,7 +181,6 @@ public class ItemsController {
 
 作用：
 + **窄化请求映射**
-
 ```java
 //使用@Controller来标识它是一个控制器
 @Controller
@@ -204,7 +199,7 @@ public class ItemsController {
 ### 返回String
 
 如果Controller方法返回String，可以有以下三种方法：
-1. **表示返回逻辑视图名。**
+**1、表示返回逻辑视图名。**
 真正视图(jsp路径)=前缀+逻辑视图名+后缀
 
 ```java
@@ -225,17 +220,14 @@ public String editItems(Model model)throws Exception {
     return "items/editItems";
 }
 ```
-
-2. **redirect重定向**
+**2、 redirect重定向**
 商品修改提交后，重定向到商品查询列表。
 redirect重定向特点：浏览器地址栏中的url会变化。修改提交的request数据无法传到重定向的地址，因为重定向后重新进行request（request无法共享）。
-
 ```java
 //重定向到商品查询列表
 return "redirect:queryItems.action";
 ```
-
-3. **forward页面转发**
+**3、forward页面转发**
 通过forward进行页面转发，浏览器地址栏url不变，request可以共享。
 
 ```java
@@ -246,19 +238,18 @@ return "forward:queryItems.action";
 ### 返回void
 
 在Controller方法形参上可以定义request和response，使用request或response指定响应结果：
-1. **使用request转向页面**，如下：
+**1、使用request转向页面**，如下：
 ```java
 request.getRequestDispatcher("页面路径").forward(request, response);
 ```
-2. **通过response页面重定向**：
+**2、通过response页面重定向**：
 ```java
 response.sendRedirect("url")
 ```
 
-3. **通过response指定响应结果**，例如响应json数据如下：
+**3、通过response指定响应结果**，例如响应json数据如下：
 ```java
 response.setCharacterEncoding("utf-8");
 response.setContentType("application/json;charset=utf-8");
 response.getWriter().write("json串");
 ```
-
