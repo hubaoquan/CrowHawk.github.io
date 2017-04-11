@@ -73,6 +73,7 @@ public interface ItemsMapper {
 接口功能：
 + 根据id查询商品信息
 + 修改商品信息
+
 ```java
 //根据id查询商品信息
 ItemsCustom findItemsById(Integer id) throws Exception;
