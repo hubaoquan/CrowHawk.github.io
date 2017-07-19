@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - MyBatis
+    - 框架
 ---
 
 > 通过parameterType指定输入参数的类型，类型可以是简单类型、hashmap、**pojo的包装类型**。前面的文章中parameterType指定的类型都是简单类型，这里就不再赘述，本文主要介绍传递pojo对象和pojo包装对象的方法，传递hashmap的方法与其类似，亦不多加笔墨。

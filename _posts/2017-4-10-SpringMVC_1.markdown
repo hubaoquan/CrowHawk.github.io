@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - SpringMVC
+    - 框架
 ---
 
 # MVC架构模式

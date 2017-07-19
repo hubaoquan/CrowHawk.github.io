@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - MyBatis
+    - 框架
 ---
 
 > MyBatis的输出映射分为两种方式，resultType和resultMap

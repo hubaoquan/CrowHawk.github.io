@@ -8,9 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - Java
     - Java学习
-    - 后台开发
 ---
 
 > 反射就是把Java类中的各种成分映射成相应的Java类（主要用于框架开发）

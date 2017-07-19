@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - MyBatis
+    - 框架
 ---
 
 >  MyBatis对于输出的高级映射分为一对一、一对多、多对多，本文将以一个订单商品数据模型为例，先介绍一对一映射的应用，在后续文章中依然会以这个模型陆续介绍一对多和多对多映射。

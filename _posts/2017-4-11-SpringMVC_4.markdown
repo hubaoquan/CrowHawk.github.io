@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - SpringMVC
+    - 框架
 ---
 在之前的文章中，已经针对商品订单管理案例，使用SSM框架完成了商品列表查询的功能，本文则介绍了另一个商品修改功能的开发，同时也是为后续文章所介绍的技术提供一个案例。
 

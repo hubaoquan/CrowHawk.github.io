@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - MyBatis
+    - 框架
 ---
 
 > **案例：**查询用户及用户购买的商品信息。用户表user和商品表items在数据库级别没有关系，但它们之间可以通过orders表和orderdetail表建立关系。

@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - SpringMVC
+    - 框架
 ---
 参数绑定是指Web API将**HTTP请求数据**绑定到一个动作方法的参数中。
 在SpringMVC中，从客户端请求key/value数据，经过参数绑定，将key/value数据绑定到**Handler(Controller)方法的形参**上，接收页面提交的数据通过方法的形参来接收。处理器适配器调用SpringMVC提供的**参数绑定组件（converter）**将请求的key/value数据转成Handler(Controller)方法的形参。

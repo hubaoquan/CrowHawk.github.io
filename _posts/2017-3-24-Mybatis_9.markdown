@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - MyBatis
+    - 框架
 ---
 
 > 案例：查询所有订单信息及订单下的订单明细信息，一个订单下会有多条明细信息，所以这是一对多的查询。

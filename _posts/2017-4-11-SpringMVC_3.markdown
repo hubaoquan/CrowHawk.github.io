@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - SpringMVC
+    - 框架
 ---
 
 **SpringMVC+Spring+MyBatis**框架的组合，是标准的MVC程序架构模式，将整个系统划分为**显示层**、**Controller层**、**Service层**、**Dao层**四层，使用SpringMVC负责请求的转发和视图管理，Spring实现业务对象管理, MyBatis作为数据对象持久化引擎。彼此分工，极大地提高了Web应用的开发效率。本文依然以商品列表查询为例，介绍SSM框架的整合使用。

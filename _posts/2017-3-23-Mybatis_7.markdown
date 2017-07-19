@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - MyBatis
+    - 框架
 ---
 
 **动态SQL**是MyBatis最核心的功能和最强大的特性之一，在使用原生JDBC进行连接数据库时，若要完成SQL语句拼接，程序员需要小心翼翼地完成代码，非常不方便，而MyBatis基于OGNL表达式的动态SQL机制，对SQL语句进行灵活操作，通过表达式进行判断，对SQL进行灵活拼接、组装。

@@ -8,8 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - JavaWeb
-    - SpringMVC
+    - 框架
 ---
 
 在商品订单管理为例，做一个商品列表查询的简单案例。
