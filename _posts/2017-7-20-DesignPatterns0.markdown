@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "设计模式0——概述"
+title:      "设计模式(0)——概述"
 subtitle:   ""
 date:       2017-07-20 22:00:00
 author:     "Crow"
