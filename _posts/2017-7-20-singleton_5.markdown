@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "设计模式5-单例模式"
+title:      "设计模式5——单例模式"
 subtitle:   ""
 date:       2017-07-20 22:00:05
 author:     "Crow"

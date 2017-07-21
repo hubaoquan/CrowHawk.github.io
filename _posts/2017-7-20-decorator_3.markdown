@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "设计模式3-装饰者模式"
+title:      "设计模式3——装饰者模式"
 subtitle:   ""
 date:       2017-07-20 22:00:03
 author:     "Crow"

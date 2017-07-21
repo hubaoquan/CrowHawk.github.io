@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "设计模式7-适配器模式"
+title:      "设计模式7——适配器模式"
 subtitle:   ""
 date:       2017-07-20 22:00:07
 author:     "Crow"
