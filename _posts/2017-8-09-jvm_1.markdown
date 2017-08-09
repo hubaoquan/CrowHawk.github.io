@@ -17,7 +17,7 @@ tags:
 
 JVM载执行Java程序的过程中会把它所管理的内存划分为若干个不同的数据区域。这些区域都有各自的用途，以及创建和销毁的时间，有的区域随着虚拟机进程的启动而存在，有些区域则是依赖用户线程的启动和结束而建立和销毁。具体如下图所示：
 
-<center>![](https://pic.yupoo.com/crowhawk/3d24df02/776c8d55.png)</center>
+![](https://pic.yupoo.com/crowhawk/3d24df02/776c8d55.png)
 
 ### 程序计数器（Program Counter Register）
 
@@ -161,7 +161,7 @@ HotSpot虚拟机的对象头包括两部分信息：
 + **对象自身的运行时数据 “Mark Word”**
 如哈希码（HashCode）、GC分代年龄、锁状态标志、线程持有的锁、偏向线程ID、偏向时间戳等等，这部分数据的长度在32位和64位的虚拟机（暂不考虑开启压缩指针的场景）中分别为32个和64个Bits，官方称它为**“Mark Word”**。对象需要存储的运行时数据很多，其实已经超出了32、64位Bitmap结构所能记录的限度，但是对象头信息是与对象自身定义的数据无关的额外存储成本，考虑到虚拟机的空间效率，Mark Word被设计成一个**非固定的数据结构**以便在极小的空间内存储尽量多的信息，它会**根据对象的状态复用自己的存储空间**。例如在32位的HotSpot虚拟机中对象**未被锁定**的状态下，Mark Word的32个Bits空间中的25Bits用于存储对象哈希码（HashCode），4Bits用于存储对象分代年龄，2Bits用于存储锁标志位，1Bit固定为0，在其他状态（轻量级锁定、重量级锁定、GC标记、可偏向）下对象的存储内容如下图所示：
 
-<center><img src="https://pic.yupoo.com/crowhawk/4f006175/8be38542.png"</center>
+<center><img src="https://pic.yupoo.com/crowhawk/4f006175/8be38542.png"></center>
 
 + **类型指针**
 类型指针即**对象指向它的类元数据的指针**，虚拟机通过这个指针来确定这个对象是哪个类的实例。并不是所有的虚拟机实现都必须在对象数据上保留类型指针，换句话说**查找对象的元数据信息并不一定要经过对象本身**，这点我们在下一节讨论。另外，如果对象是一个Java数组，那在对象头中还必须有一块用于**记录数组长度**的数据，因为虚拟机可以通过普通Java对象的元数据信息确定Java对象的大小，但是从数组的元数据中无法确定数组的大小。
@@ -182,13 +182,13 @@ HotSpot虚拟机的对象头包括两部分信息：
 
 如果使用句柄访问的话，**Java堆中**将会划分出一块内存来作为**句柄池**，reference中存储的就是对象的句柄地址，而句柄中包含了**对象实例数据**与**类型数据**的各自的**具体地址信息**。如下图所示：
 
-<center>![](https://pic.yupoo.com/crowhawk/af3c02ef/bfd967c5.png)</center>
+![](https://pic.yupoo.com/crowhawk/af3c02ef/bfd967c5.png)
 
 <big>**2. 使用直接指针访问**</big>
 
 如果使用直接指针访问的话，Java堆对象的布局中就必须考虑如何放置访问类型数据的相关信息，reference中存储的直接就是对象地址，如下图所示：
 
-<center>![](https://pic.yupoo.com/crowhawk/5c1acdb8/f5086a4d.png)</center>
+![](https://pic.yupoo.com/crowhawk/5c1acdb8/f5086a4d.png)
 
 ---
 
