@@ -50,7 +50,7 @@ kramdown:
 disqus_username: crow
 
 # Netease settings
-netease_comment:false
+netease_comment: false
 
 # Analytics settings
 # Baidu Analytics 
