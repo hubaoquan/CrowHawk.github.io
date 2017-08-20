@@ -47,15 +47,10 @@ kramdown:
 
 
 # Disqus settings
-#disqus_username: _your_disqus_short_name_
+disqus_username: crow
 
-# Duoshuo settings
-duoshuo_username: crowhawk
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
+# Netease settings
+netease_comment:false
 
 # Analytics settings
 # Baidu Analytics 
