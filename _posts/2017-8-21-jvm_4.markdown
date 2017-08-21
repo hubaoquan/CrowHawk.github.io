@@ -22,7 +22,6 @@ tags:
 # GC优化是必要的吗？
 
 或者更准确地说，GC优化对Java基础服务来说是必要的吗？答案是否定的，事实上GC优化对Java基础服务来说在有些场合是可以省去的，但前提是这些正在运行的Java系统，必须包含以下参数或行为：
-
 + 内存大小已经通过**-Xms**和**-Xmx**参数指定过
 + 运行在server模式下（使用**-server**参数）
 + 系统中没有残留超时日志之类的错误日志
@@ -43,7 +42,6 @@ tags:
 如果在经过几次重复的优化后应用程序的内存用量情况有所改善，那么久可以启动GC优化了。
 
 笔者总结了GC优化的两个目的：
-
 1. **将进入老年代的对象数量降到最低**
 2. **减少Full GC的执行时间**
 
@@ -54,7 +52,6 @@ tags:
 # 降低Full GC的时间
 
 Full GC的执行时间比Minor GC要长很多，因此，如果在Full GC上花费过多的时间（超过1s），将可能出现超时错误。
-
 + 如果**通过减小老年代内存来减少Full GC时间**，可能会引起`OutOfMemoryError`或者导致Full GC的频率升高。
 + 另外，如果**通过增加老年代内存来降低Full GC的频率**，Full GC的时间可能因此增加。
 
@@ -155,7 +152,6 @@ S0    S1    E    O    P    YGC    YGCT    FGC    FGCT GCT
 使用`jstat`命令可以很容易地查看GC状态，但是分析GC的最佳方式是加上`-verbosegc`参数来生成日志。在之前的文章中笔者已经解释了如何分析这些日志。**HPJMeter**是笔者最喜欢的用于分析`-verbosegc`生成的日志的工具，它简单易用，使用HPJmeter可以很容易地查看GC执行时间以及GC发生频率。
 
 此外，如果GC执行时间满足下列所有条件，就没有必要进行GC优化了：
-
 + Minor GC执行非常迅速（50ms以内）
 + Minor GC没有频繁执行（大约10s执行一次）
 + Full GC执行非常迅速（1s以内）
@@ -192,12 +188,10 @@ Oracle JVM有5种垃圾收集器，但是在JDK 7以前的版本中，你只能�
 下面展示了内存大小、GC运行次数和GC运行时间之间的关系：
 
 **大内存空间**
-
 + 减少了GC的次数
 + 提高了GC的运行时间
 
 **小内存空间**
-
 + 增多了GC的次数
 + 降低了GC的运行时间
 
@@ -218,7 +212,6 @@ Oracle JVM有5种垃圾收集器，但是在JDK 7以前的版本中，你只能�
 在设置了GC参数和`-verbosegc`参数后，可以使用tail命令确保日志被正确地生成。如果参数设置得不正确或日志未生成，那你的时间就被白白浪费了。如果日志收集没有问题的话，在收集一或两天数据后再检查结果。最简单的方法是把日志从服务器移到你的本地PC上，然后用**HPJMeter**分析数据。
 
 在分析结果时，请关注下列几点（这个优先级是笔者根据自己的经验拟定的，我认为选取GC参数时应考虑的最重要的因素是Full GC的运行时间。）：
-
 + 单次Full GC运行时间
 + 单次Minor GC运行时间
 + Full GC运行间隔
@@ -267,12 +260,10 @@ NGCMN NGCMX NGC S0C S1C EC OGCMN OGCMX OGC OC PGCMN PGCMX PGC PC YGC FGC
 ```
 
 其中的关键值如下：
-
 + 新生代内存用量：212,992 KB
 + 老年代内存用量：1,884,160 KB
 
 因此，除了永久代以外，被分配的内存空间加起来有2GB，并且新生代：老年代=1：9，为了得到比使用`jstat`更细致的结果，还需加上`-verbosegc`参数获取日志，并把三台服务器按照如下方式设置（除此以外没有使用任何其他参数）：
-
 + NewRatio=2
 + NewRatio=3
 + NewRatio=4
@@ -284,7 +275,6 @@ NGCMN NGCMX NGC S0C S1C EC OGCMN OGCMX OGC OC PGCMN PGCMX PGC PC YGC FGC
 在这样的情况下，就没有必要去改变其他的参数值了，只要选择一个最合适的`NewRatio`值即可。那么，**如何确定最佳的NewRatio值呢？**为此，我们分析一下每种`NewRatio`值下Minor GC的平均响应时间。
 
 在每种参数下Minor GC的平均响应时间如下：
-
 + NewRatio=2：45ms
 + NewRatio=3：34ms
 + NewRatio=4：30ms
@@ -322,7 +312,6 @@ S0 S1 E O P YGC YGCT FGC FGCT GCT
 ```
 
 Full GC的时间缩短了，变成了每次3s，跟15s比有了显著提升。但是3s依然不够快，为此笔者创建了以下6种情况：
-
 + Case 1: `-XX:+UseParallelGC -Xms1536m -Xmx1536m -XX:NewRatio=2`
 + Case 2: `-XX:+UseParallelGC -Xms1536m -Xmx1536m -XX:NewRatio=3`
 + Case 3: `-XX:+UseParallelGC -Xms1g -Xmx1g -XX:NewRatio=3`
