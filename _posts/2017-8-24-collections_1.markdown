@@ -21,7 +21,7 @@ public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 ```
 
-其中需要注意的是**RandomAccess**接口，这是一个标记接口，没有定义任何具体的内容。在该接口的注释中有这样一段话：
+其中需要注意的是**RandomAccess**接口，这是一个标记接口，没有定义任何具体的内容，该接口的意义是随机存取数据，在该接口的注释中有这样一段话：
 ```java
 /**
 for (int i=0, n=list.size(); i < n; i++) {     
