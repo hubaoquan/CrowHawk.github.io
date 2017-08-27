@@ -8,7 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - Java
+    - Java基础
 ---
 
 **java.util.List**接口是Java Collections Framework的一个重要组成部分，List接口的架构图如下：

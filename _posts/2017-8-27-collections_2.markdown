@@ -8,7 +8,7 @@ author:     "Crow"
 header-mask: 0.3
 catalog:    true
 tags:
-    - Java
+    - Java基础
 ---
 
 在Java Collections Framework的体系中中，主要有两个重要的接口，一个是List、Set和Queue所属的Collection，还有一个就是Map接口了。在上一篇文章中介绍了List接口，它适用于按数值索引访问元素的情形。本文中将介绍的Map则提供了一个更通用的元素存储方法。
