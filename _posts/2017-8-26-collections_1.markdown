@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Java Collections Framework源码解读(1)——ArrayList、LinkedList和Vector"
+title:      "Java集合框架源码解读(1)——ArrayList、LinkedList和Vector"
 subtitle:   ""
 date:       2017-08-26 22:00:00
 author:     "Crow"
