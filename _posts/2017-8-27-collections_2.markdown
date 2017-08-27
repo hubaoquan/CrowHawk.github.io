@@ -15,15 +15,15 @@ tags:
 
 Map 集合类用于存储**元素对（称作“键”和“值”）**也叫**键值对（key/value pair）**，其中每个键映射到一个值。从概念上而言，您可以将 List 看作是具有数值键的 Map。Map接口规定key值是不能重复的，而value值可以重复。
 
-Map接口有两种重要的具体实现类——**HashMap**和**TreeMap**，本文将通过分析源码重点介绍HashMap及其相关实现类，关于TreeMap的内容则留到下一章再讲。
+Map接口有两种重要的具体实现类——**HashMap**和**TreeMap**，本文将通过分析源码重点介绍HashMap类，关于其相关类及TreeMap的内容则留到后续文章再讲。
 
-# HashMap
+# 概述
 
 HashMap是基于哈希表实现的，HashMap的每一个元素是一个key-value对，其内部通过**单链表**和**红黑树**解决冲突问题，容量不足时会自动扩容。
 
 HashMap是非线程安全的，只适用于单线程环境下，多线程环境下可以采用Concurrent并发包下的**ConcurrentHashMap**。
 
-### 哈希冲突
+# 哈希冲突
 
 对于每个对象 X 和 Y，如果当且仅当 X.equals(Y) 为 false，使得 X.hashCode()!= Y.hashCode() 为 true，这样的函数叫做**完美 Hash 函数**。当哈希函数对两个不同的数据项产生了相同的hash值时，这就称为**哈希冲突**。
 
@@ -31,7 +31,7 @@ HashMap是非线程安全的，只适用于单线程环境下，多线程环境�
 
 因此，实现HashMap的一个重要考量，就是**尽可能地避免哈希冲突**。HashMap在JDK 1.8中的做法是，用**链表**和**红黑树**存储**相同hash值的value**。当Hash冲突的个数比较少时，使用链表，否则使用红黑树。
 
-### 底层实现
+# 底层实现
 
 HashMap实现的接口如下：
 ```java
