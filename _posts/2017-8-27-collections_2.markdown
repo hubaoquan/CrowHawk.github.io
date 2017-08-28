@@ -116,11 +116,11 @@ static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
 HashMap的几个重要**字段**如下：
 
 ```java
-	//存储数据的Node数组，长度是2的幂。
-	transient Node<K,V>[] table;
-	//用来返回key或value的集合
+    //存储数据的Node数组，长度是2的幂。
+    transient Node<K,V>[] table;
+    //键值对缓存，它们的映射关系集合保存在entrySet中。即使Key在外部修改导致hashCode变化，缓存中还可以找到映射关系
     transient Set<Map.Entry<K,V>> entrySet;
-	//map中保存的键值对的数量
+    //map中保存的键值对的数量
     transient int size;
     //map结构被改变的次数
     transient int modCount;
