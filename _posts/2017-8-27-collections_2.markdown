@@ -15,7 +15,7 @@ tags:
 
 Map 集合类用于存储**元素对（称作“键”和“值”）**也叫**键值对（key/value pair）**，其中每个键映射到一个值。从概念上而言，您可以将 List 看作是具有数值键的 Map。Map接口规定key值是不能重复的，而value值可以重复。
 
-Map接口有两种重要的具体实现类——**HashMap**和**TreeMap**，本文将通过分析源码重点介绍HashMap类，关于其相关类及TreeMap的内容则留到后续文章再讲。
+Map接口有三种重要的具体实现类——**HashMap**、**WeakHashMap**和**TreeMap**，本文将通过分析源码重点介绍HashMap类，关于其相关类和另两个类的内容则留到后续文章再讲。
 
 # 概述
 
