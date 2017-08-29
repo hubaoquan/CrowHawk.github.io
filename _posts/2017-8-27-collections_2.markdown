@@ -136,7 +136,7 @@ HashMap的数据结构如下图所示：
 
 <center><img src="https://pic.yupoo.com/crowhawk/82b34b3c/07aa2f3a.png"></center>
 
-HashMap的一些重要的**常量**如下，它们与HashMap规避哈希碰撞的策略息息相关：
+HashMap的一些重要的**静态全局变量**如下，它们与HashMap规避哈希碰撞的策略息息相关：
 
 ```java
     /**
