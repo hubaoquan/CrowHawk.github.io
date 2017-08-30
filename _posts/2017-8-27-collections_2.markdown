@@ -13,12 +13,14 @@ tags:
 
 在Java Collections Framework的体系中中，主要有两个重要的接口，一个是List、Set和Queue所属的Collection，还有一个就是Map接口了。在上一篇文章中介绍了List接口，它适用于按数值索引访问元素的情形。本文中将介绍的Map则提供了一个更通用的元素存储方法。
 
-Map 集合类用于存储**元素对（称作“键”和“值”）**也叫**键值对（key/value pair）**，其中每个键映射到一个值。从概念上而言，您可以将 List 看作是具有数值键的 Map。Map接口规定key值是不能重复的，而value值可以重复。
+Map 集合类用于存储**元素对（称作“键”和“值”）**也叫**键值对（key/value pair）**，其中每个键映射到一个值。从概念上而言，你可以将 List 看作是具有数值键的 Map。Map接口规定key值是不能重复的，而value值可以重复。
 
-Map接口有三种重要的具体实现类——**HashMap**、**WeakHashMap**和**TreeMap**，其中**HashMap**还有一个重要的子类**LinkedHashMap**，本文将通过分析源码重点介绍HashMap类，关于另外几个类的内容则留到后续文章再讲。
+Map接口有三种重要的具体实现类——**HashMap**、**WeakHashMap**和**TreeMap**，其中**HashMap**还有一个重要的子类**LinkedHashMap**，它们都是非线程安全的类，本文将通过分析源码重点介绍HashMap类，关于另外几个类的内容则留到后续文章再讲。
 
 Map接口的架构如下图所示：
 <center><img src="http://pic.yupoo.com/crowhawk/02033bd6/a082d0f1.png"></center>
+
+在图中可以看到，Map接口还有一个叫做HashTable的实现类，它是JDK早期的产物，与HashMap实现基本相似，不过是它是线程安全的，由于该容器已经过时，现在基本被弃用，因此在系列文章中就不多加笔墨去介绍了。
 
 # 概述
 
