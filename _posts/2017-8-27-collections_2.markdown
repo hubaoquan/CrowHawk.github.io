@@ -141,6 +141,11 @@ HashMap的数据结构如下图所示：
 
 <center><img src="https://pic.yupoo.com/crowhawk/82b34b3c/07aa2f3a.png"></center>
 
+此外，这里的**modCount**属性，记录了map结构被改变的次数，它与**"fail-fast"**机制的实现息息相关。fail-fast机制是Java集合的一种错误检测机制，假设存在两个线程（线程1、线程2），线程1通过Iterator在遍历集合A中的元素，在某个时候线程2修改了集合A的结构（是**结构上面的修改**，而不是简单的修改集合元素的内容），那么这个时候程序就会抛出 ConcurrentModificationException 异常，从而产生fail-fast机制。
+
+对于HashMap内容的修改都将使modCount的值增加，在迭代器初始化过程中会将这个值赋给迭代器的**expectedModCount**,在迭代过程中，判断modCount跟expectedModCount是否相等，如果不相等就表示已经有其他线程修改了Map。
+
+
 HashMap的一些重要的**静态全局变量**如下，它们与HashMap规避哈希碰撞的策略息息相关：
 
 ```java
