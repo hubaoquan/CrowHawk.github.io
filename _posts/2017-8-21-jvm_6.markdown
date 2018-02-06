@@ -107,7 +107,7 @@ protected synchronized Class<?> loadClass(String name,boolean resolve)throws Cla
 :----|:----
 |**defineClass(String name, byte[] b, int off, int len)**|把字节数组 b中的内容转换成 Java 类，该字节数组可以看成是二进制流字节组成的文件，返回的结果是`java.lang.Class`类的实例。这个方法被声明为 final的。|
 |**loadClass(String name)**|上文中已贴出源码，实现了双亲委派模型，调用`findClass()`执行类加载动作,返回的是`java.lang.Class`类的实例。|
-|**findClass(String name)**|通过传入的类全限定名name来获取对应的类，返回的是返回的是`java.lang.Class`类的实例，该类没有提供具体的实现，开发者在自定义类加载器时需重用此方法，在实现此方法时需调用`defineClass(String name, byte[] b, int off, int len)`方法。|
+|**findClass(String name)**|通过传入的类全限定名name来获取对应的类，返回的是`java.lang.Class`类的实例，该类没有提供具体的实现，开发者在自定义类加载器时需重用此方法，在实现此方法时需调用`defineClass(String name, byte[] b, int off, int len)`方法。|
 
 在了解完上述内容后，我们可以容易地意识到自定义类加载器有以下两种方式：
 + **采用双亲委派模型**：继承ClassLoader类，只需重写其的`findClass(String name)`方法，而不需重写`loadClass(String name)`方法。
