@@ -39,7 +39,7 @@ CPU缓存的出现主要是为了解决**CPU运算速度与内存读写速度不
 ## 使用CPU缓存带来的问题
 
 用一张图表示一下 CPU –> CPU缓存 –> 主内存 数据读取之间的关系：
-<center>![](http://pic.yupoo.com/crowhawk/3a5ff907/a36b46b2.png)</center>
+<center><img src="http://pic.yupoo.com/crowhawk/3a5ff907/a36b46b2.png"></center>
 <center>图片来自网络</center>
 当系统运行时，CPU执行计算的过程如下：
 
@@ -49,7 +49,7 @@ CPU缓存的出现主要是为了解决**CPU运算速度与内存读写速度不
 4. 高速缓存中的数据写回主内存
 
 如果服务器是单核CPU，那么这些步骤不会有任何的问题，但是如果服务器是**多核CPU**，那么问题来了，以Intel Core i7处理器的高速缓存概念模型为例（图片来自《深入理解计算机系统》）：
-<center>![](http://pic.yupoo.com/crowhawk/cc94e4ec/3fc939ec.png)</center>
+<center><img src="http://pic.yupoo.com/crowhawk/cc94e4ec/3fc939ec.png"></center>
 试想下面一种情况：
 1. 核0读取了一个字节，根据局部性原理，它相邻的字节同样被被读入核0的缓存
 2. 核3做了上面同样的工作，这样核0与核3的缓存拥有同样的数据
